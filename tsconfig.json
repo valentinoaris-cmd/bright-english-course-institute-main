@@ -1,12 +1,15 @@
+// tsconfig.server.json
 {
   "compilerOptions": {
     "target": "ES2022",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "outDir": "./dist-server",
     "rootDir": ".",
+    "outDir": "./dist-server",
     "noEmit": false,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true
   },
-  "include": ["server.ts"]
+  "include": ["server.ts", "server/**/*.ts"]
 }
