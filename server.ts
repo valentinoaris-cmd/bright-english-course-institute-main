@@ -20,6 +20,22 @@ app.get("/api/health", (req, res) => {
   res.json({ status: "ok" });
 });
 
+app.get('/api/db-check', async (req, res) => {
+  try {
+    await pool.query('SELECT 1');
+    res.json({
+      success: true,
+      message: 'Terhubung ke database',
+    });
+  } catch (error) {
+    console.error('Database connection check failed:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Tidak dapat terhubung ke database',
+    });
+  }
+});
+
 app.get("/api/message", (req, res) => {
   res.json({
     message: ""

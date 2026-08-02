@@ -7,7 +7,7 @@ const requiredEnv = [
   'DB_NAME',
 ];
 
-const missingEnv = requiredEnv.filter((key) => !process.env[key]);
+const missingEnv = requiredEnv.filter((key) => process.env[key] === undefined);
 
 if (missingEnv.length > 0) {
   throw new Error(
