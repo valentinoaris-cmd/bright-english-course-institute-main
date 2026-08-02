@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "tsx server.ts",
     "build": "vite build && tsc -p tsconfig.server.json",
-    "start": "node dist-server/server.js"
-    "clean": "rm -rf dist",
+    "start": "node dist-server/server.js",
+    "clean": "rm -rf dist dist-server",
     "lint": "tsc --noEmit"
   },
   "dependencies": {
